@@ -5,7 +5,19 @@
   width: min(224px, calc(100% - 28px), calc(100dvh - 105px));
   z-index: 30;
   isolation: isolate;
-  pointer-events: none;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  box-shadow: 0 14px 45px #00000026, 0 2px 8px #00000014;
+  pointer-events: auto;
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .night-shift-corner {
+    background: color-mix(in srgb, var(--panel) 88%, transparent);
+    -webkit-backdrop-filter: blur(16px) saturate(0.7);
+    backdrop-filter: blur(16px) saturate(0.7);
+  }
 }
 .night-shift-corner[hidden] {
   display: none;
@@ -16,16 +28,17 @@
 .night-shift-corner.is-expanded {
   width: min(540px, calc(100% - 28px), calc(100dvh - 105px));
 }
+.night-shift-corner.is-help-open:not(.is-expanded) {
+  width: min(320px, calc(100% - 28px));
+}
 .night-shift-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 4px 0 11px;
-  height: 34px;
+  height: 38px;
   color: var(--muted);
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 7px;
+  border-bottom: 1px solid var(--line);
   pointer-events: auto;
 }
 .night-shift-toolbar > span {
@@ -45,6 +58,17 @@
   color: inherit;
   background: none;
   padding: 0;
+  transition: background 120ms ease, transform 140ms var(--ease-out);
+}
+.night-shift-toolbar button:active {
+  transform: scale(0.95);
+}
+.night-shift-toolbar button:focus-visible {
+  outline-offset: -3px;
+}
+.night-shift-toolbar button[aria-expanded="true"] {
+  color: var(--ink);
+  background: var(--hover);
 }
 .night-shift-host {
   width: 100%;
@@ -53,6 +77,73 @@
 .night-shift-host night-shift {
   --night-shift-size: 100%;
   pointer-events: auto;
+}
+.night-shift-help {
+  max-height: calc(100dvh - 128px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.night-shift-help h3 {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  outline: none;
+}
+.night-shift-help-intro {
+  margin-top: 5px;
+}
+.night-shift-help h4 {
+  margin: 18px 0 7px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+.night-shift-help dl {
+  margin: 0;
+}
+.night-shift-help dl > div {
+  display: grid;
+  grid-template-columns: 69px minmax(0, 1fr);
+  gap: 7px;
+  padding-block: 5px;
+}
+.night-shift-help dt {
+  color: var(--ink);
+}
+.night-shift-help dd {
+  margin: 0;
+}
+.night-shift-help kbd {
+  display: inline-block;
+  min-width: 17px;
+  margin: 0 2px 2px 0;
+  padding: 0 4px;
+  color: var(--ink);
+  background: var(--hover);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 11px;
+  text-align: center;
+}
+.night-shift-help-note {
+  margin-top: 18px;
+}
+.night-shift-help-done {
+  width: 100%;
+  min-height: 36px;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--hover);
+  color: var(--ink);
+  font: inherit;
 }
 .night-shift-status,
 .night-shift-error {
@@ -114,7 +205,7 @@
     width: min(218px, calc(100% - 28px), 40dvh);
   }
   .night-shift-toolbar {
-    height: 40px;
+    height: 48px;
     padding-left: 11px;
     padding-right: 3px;
   }
@@ -122,7 +213,28 @@
     font-size: 10px;
   }
   .night-shift-toolbar button {
-    width: 36px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
+  }
+  .night-shift-help {
+    font-size: 12px;
+  }
+  .night-shift-help-done {
+    min-height: 42px;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .night-shift-corner {
+    background: var(--panel);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .night-shift-toolbar button {
+    transition: none;
+  }
+  .night-shift-toolbar button:active {
+    transform: none;
   }
 }

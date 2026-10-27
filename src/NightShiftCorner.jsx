@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Maximize2, Minimize2, Play, X } from "lucide-react";
+import React, { useEffect, useId, useRef, useState } from "react";
+import { CircleHelp, Maximize2, Minimize2, Play, X } from "lucide-react";
 import { pauseNightShift, resumeNightShift } from "./night-shift-control.js";
 import "./night-shift.css";
 
@@ -8,13 +8,18 @@ export default function NightShiftCorner({ obscured = false }) {
     () => window.matchMedia("(min-width: 1120px)").matches,
   );
   const [expanded, setExpanded] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
   const [status, setStatus] = useState("loading");
   const [attempt, setAttempt] = useState(0);
   const host = useRef(null);
   const game = useRef(null);
   const launcher = useRef(null);
-  const resumeAfterDialog = useRef(false);
+  const helpTitle = useRef(null);
+  const helpId = useId();
+  const resumeAfterOverlay = useRef(false);
   const returnFocus = useRef(false);
+  const returnToGame = useRef(false);
+  const suspended = obscured || helpOpen;
 
   useEffect(() => {
     if (!open) {
@@ -50,23 +55,49 @@ export default function NightShiftCorner({ obscured = false }) {
       // disconnectedCallback releases the renderer, audio, worker and inputs.
       element?.remove();
       game.current = null;
-      resumeAfterDialog.current = false;
+      resumeAfterOverlay.current = false;
     };
   }, [open, attempt]);
 
   useEffect(() => {
     if (status !== "ready" || !open) return;
-    if (obscured) resumeAfterDialog.current = pauseNightShift(game.current);
+    if (suspended) resumeAfterOverlay.current = pauseNightShift(game.current);
     else {
-      resumeNightShift(game.current, resumeAfterDialog.current);
-      resumeAfterDialog.current = false;
+      resumeNightShift(game.current, resumeAfterOverlay.current);
+      resumeAfterOverlay.current = false;
     }
-  }, [obscured, status, open]);
+  }, [suspended, status, open]);
+
+  useEffect(() => {
+    // The pinned widget uses hard pixel scaling. Interpolate only the enlarged
+    // presentation; keep its render resolution and game assets unchanged.
+    const canvas = game.current?.shadowRoot?.querySelector("canvas");
+    if (canvas) canvas.style.imageRendering = expanded ? "auto" : "";
+  }, [expanded, status, open]);
+
+  useEffect(() => {
+    if (helpOpen) helpTitle.current?.focus({ preventScroll: true });
+    else if (returnToGame.current) {
+      const shadow = game.current?.shadowRoot;
+      const target =
+        shadow?.querySelector(".play:not([hidden]):not(:disabled)") ||
+        shadow?.querySelector("canvas");
+      target?.focus({ preventScroll: true });
+      returnToGame.current = false;
+    }
+  }, [helpOpen]);
+
+  function dismissHelp() {
+    returnToGame.current = true;
+    setHelpOpen(false);
+  }
 
   function close() {
     returnFocus.current = true;
+    returnToGame.current = false;
     setOpen(false);
     setExpanded(false);
+    setHelpOpen(false);
   }
 
   if (!open)
@@ -86,13 +117,34 @@ export default function NightShiftCorner({ obscured = false }) {
 
   return (
     <section
-      className={"night-shift-corner" + (expanded ? " is-expanded" : "")}
+      className={
+        "night-shift-corner" +
+        (expanded ? " is-expanded" : "") +
+        (helpOpen ? " is-help-open" : "")
+      }
       aria-label="Night Shift game"
       hidden={obscured}
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && helpOpen) {
+          event.preventDefault();
+          event.stopPropagation();
+          dismissHelp();
+        }
+      }}
     >
       <div className="night-shift-toolbar">
         <span>Night Shift</span>
         <div>
+          <button
+            type="button"
+            onClick={() => (helpOpen ? dismissHelp() : setHelpOpen(true))}
+            aria-label="How to play Night Shift"
+            aria-expanded={helpOpen}
+            aria-controls={helpId}
+            title="How to play"
+          >
+            <CircleHelp size={15} aria-hidden="true" />
+          </button>
           <button
             type="button"
             onClick={() => setExpanded(!expanded)}
@@ -116,13 +168,65 @@ export default function NightShiftCorner({ obscured = false }) {
         className="night-shift-host"
         ref={host}
         aria-busy={status === "loading"}
+        hidden={helpOpen}
       />
-      {status === "loading" && (
+      {helpOpen && (
+        <div
+          className="night-shift-help"
+          id={helpId}
+          aria-labelledby={`${helpId}-title`}
+          role="region"
+        >
+          <h3 id={`${helpId}-title`} ref={helpTitle} tabIndex={-1}>
+            How to play
+          </h3>
+          <p className="night-shift-help-intro">
+            Survive the night. Clean up at sunrise. Do it all again.
+          </p>
+          <h4>Keyboard & mouse</h4>
+          <dl>
+            <div>
+              <dt>Move</dt>
+              <dd>
+                <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrow keys
+              </dd>
+            </div>
+            <div>
+              <dt>Aim & fire</dt>
+              <dd>Click a zombie.</dd>
+            </div>
+            <div>
+              <dt>Auto-aim</dt>
+              <dd>
+                <kbd>Space</kbd> or <kbd>Enter</kbd> aims and fires. One shot per
+                press; allow the shotgun to pump.
+              </dd>
+            </div>
+          </dl>
+          <h4>On your phone</h4>
+          <p>Drag the lower-left of the game to move. Tap a zombie to shoot.</p>
+          <h4>After sunrise</h4>
+          <p>
+            Drive the cart with <kbd>W</kbd> / <kbd>S</kbd> and turn with{" "}
+            <kbd>A</kbd> / <kbd>D</kbd>. On touch, use the same lower-left joystick.
+            Sweep up the remains and repair the ground.
+          </p>
+          <p className="night-shift-help-note">The game pauses while you read.</p>
+          <button
+            type="button"
+            className="night-shift-help-done"
+            onClick={dismissHelp}
+          >
+            Back to game
+          </button>
+        </div>
+      )}
+      {status === "loading" && !helpOpen && (
         <p className="night-shift-status" role="status">
           Loading the camp…
         </p>
       )}
-      {status === "error" && (
+      {status === "error" && !helpOpen && (
         <div className="night-shift-error" role="status">
           <p>The camp couldn’t load.</p>
           <button type="button" onClick={() => setAttempt(attempt + 1)}>

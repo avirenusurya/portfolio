@@ -35,6 +35,8 @@ The site supports dark and light themes, reduced motion, and phone layouts. Font
 
 The camp waits until Play. Smaller screens load the game only when its launcher is opened. Closing releases the renderer and audio; project details temporarily suspend the session. See [NIGHT-SHIFT.md](./NIGHT-SHIFT.md) for controls and the pinned build manifest.
 
+The question mark next to enlarge opens desktop and phone instructions, including Space/Enter auto-aim. Reading help pauses the game and sound. A tinted, blurred panel keeps page content separate from the transparent scene.
+
 ## Deployment
 
 The site uses React and Vite. Vercel builds with `npm run build` and serves `dist`. The `api/` directory contains the same-origin SafeWaves demo handlers; its existing backend can take up to a minute to wake up. Saved demo results are labeled in the interface.
