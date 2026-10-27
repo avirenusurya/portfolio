@@ -1,0 +1,310 @@
+{
+  "units": "metres",
+  "camera": {
+    "azimuth": 45,
+    "elevation": 30,
+    "orthoSize": 15.7
+  },
+  "trailer": {
+    "door": [
+      -1.25,
+      0,
+      -0.6
+    ],
+    "step": [
+      -1.25,
+      0,
+      0.3
+    ]
+  },
+  "table": {
+    "x": 1.0,
+    "y": 0.85,
+    "z": 0.34
+  },
+  "chair": [
+    0.18,
+    0,
+    0.34
+  ],
+  "heroIntro": [
+    -1.25,
+    0,
+    0.75
+  ],
+  "heroFire": [
+    -1.15,
+    0,
+    2.35
+  ],
+  "box": [
+    -0.65,
+    0,
+    1.8
+  ],
+  "lamp": [
+    3.9,
+    3.91,
+    -1.96
+  ],
+  "window": [
+    -2.975,
+    1.7999999999999998,
+    -0.48
+  ],
+  "sites": [
+    {
+      "id": "A",
+      "x": 3.15,
+      "z": 1.55
+    },
+    {
+      "id": "B",
+      "x": 0.65,
+      "z": 3.0
+    },
+    {
+      "id": "C",
+      "x": 3.05,
+      "z": -0.65
+    }
+  ],
+  "canopyPosts": [
+    [
+      -0.22,
+      0,
+      1.1
+    ],
+    [
+      2.08,
+      0,
+      1.1
+    ]
+  ],
+  "propInterfaces": {
+    "Gun": {
+      "muzzle": [
+        0,
+        0.01,
+        0.72
+      ],
+      "pumpNode": "ShotgunPump",
+      "pumpNeutral": [
+        0,
+        -0.045,
+        0.32
+      ],
+      "pumpAxis": "z",
+      "pumpTravel": -0.12
+    },
+    "HarvesterCart": {
+      "placement": [
+        -3.55,
+        0,
+        1.0
+      ],
+      "forward": "+z",
+      "widthFolded": 0.72,
+      "widthDeployed": 0.9,
+      "wheelRadius": 0.17,
+      "wheelAxis": "x",
+      "rollerAxis": "x",
+      "crusherAxis": "x",
+      "wheels": {
+        "FL": [
+          0.3,
+          0.17,
+          0.3
+        ],
+        "FR": [
+          -0.3,
+          0.17,
+          0.3
+        ],
+        "RL": [
+          0.3,
+          0.17,
+          -0.3
+        ],
+        "RR": [
+          -0.3,
+          0.17,
+          -0.3
+        ]
+      },
+      "intake": [
+        0,
+        0.12,
+        0.44
+      ],
+      "conveyorStart": [
+        0,
+        0.18,
+        0.61
+      ],
+      "conveyorEnd": [
+        0,
+        0.64,
+        -0.08
+      ],
+      "conveyorAngle": 0.5880026035475676,
+      "outlet": [
+        0,
+        0.68,
+        -0.42
+      ],
+      "binDock": [
+        0,
+        0.235,
+        -0.42
+      ],
+      "binSlide": [
+        0,
+        0.235,
+        -0.77
+      ],
+      "handlePivot": [
+        0,
+        0.52,
+        -0.5
+      ],
+      "handleGrips": [
+        [
+          0.28,
+          1.02,
+          -0.82
+        ],
+        [
+          -0.28,
+          1.02,
+          -0.82
+        ]
+      ],
+      "handleFoldAngle": 2.0,
+      "wingFoldAngles": {
+        "L": 1.48,
+        "R": -1.48
+      },
+      "batteryDock": [
+        0.15,
+        0.895,
+        -0.25
+      ],
+      "batteryGripRelative": [
+        0,
+        0.12,
+        0
+      ],
+      "powerButton": [
+        -0.19,
+        0.873,
+        -0.32
+      ],
+      "coverTemplate": "HarvesterCover",
+      "coverGrip": [
+        0,
+        0.6,
+        0.43
+      ]
+    },
+    "CollectionBox": {
+      "dimensions": [
+        0.76,
+        0.42,
+        0.56
+      ],
+      "grips": [
+        [
+          0.4,
+          0.06,
+          0
+        ],
+        [
+          -0.4,
+          0.06,
+          0
+        ]
+      ],
+      "loads": [
+        "BoxLoad_0",
+        "BoxLoad_1",
+        "BoxLoad_2"
+      ]
+    },
+    "Kitchen": {
+      "origin": [
+        -2.975,
+        0.57,
+        -1.28
+      ],
+      "floorY": 0.57,
+      "heroRoot": [
+        -2.65,
+        0.59,
+        -1.1
+      ],
+      "heroFacing": "+z",
+      "windowBounds": {
+        "x": [
+          -3.5,
+          -2.45
+        ],
+        "y": [
+          1.22,
+          2.38
+        ],
+        "z": -0.6
+      },
+      "sashPivot": [
+        -2.975,
+        2.38,
+        -0.495
+      ],
+      "sashOpenAxis": "x",
+      "sashOpenAngle": -2.3,
+      "sashGripRelative": [
+        0,
+        -1.0899999999999999,
+        0.074
+      ],
+      "counterTopY": 1.4025,
+      "panWorld": [
+        -2.65,
+        1.465,
+        -0.8
+      ],
+      "panRimY": 1.521,
+      "panGripRelative": [
+        0.31,
+        0.026,
+        0
+      ],
+      "stirSpoonWorld": [
+        -2.65,
+        1.7,
+        -0.8
+      ],
+      "stirGripRelative": [
+        0,
+        0.08,
+        0
+      ],
+      "steamWorld": [
+        -2.65,
+        1.57,
+        -0.8
+      ],
+      "lightWorld": [
+        -2.975,
+        2.25,
+        -1.03
+      ]
+    },
+    "spawnFx": {
+      "cracks": "Site_{A|B|C}_Cracks",
+      "mound": "Site_{A|B|C}_Mound",
+      "shards": "Site_{A|B|C}_Shard_{0..7}",
+      "shardOrigins": "outer paving rim, local x/z pivot"
+    }
+  }
+}

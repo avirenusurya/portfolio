@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>Surya Avirenu — AI Engineer</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("surya-portfolio-theme") === "light"
+            ? "light"
+            : "dark";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+
+    <meta
+      name="description"
+      content="Surya builds AI products from model to interface. Explore agentic retrieval, explainable threat detection, multilingual voice models, and realtime products."
+    />
+    <meta name="author" content="Surya Avirenu" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Surya Avirenu — AI Engineer" />
+    <meta
+      property="og:description"
+      content="From the model to the thing you touch. Selected AI products and the decisions behind them."
+    />
+    <meta property="og:image" content="/og.jpg" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta
+      property="og:image:alt"
+      content="Surya Avirenu — AI Engineer. Selected AI projects, from model to interface."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og.jpg" />
+    <meta name="twitter:title" content="Surya Avirenu — AI Engineer" />
+    <meta
+      name="twitter:description"
+      content="From the model to the thing you touch. Selected AI products and the decisions behind them."
+    />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

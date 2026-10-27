@@ -1,0 +1,333 @@
+{
+  "project": "Night Shift",
+  "purpose": "Twenty generated ElevenLabs sound effects, downloaded and integrated in Night Shift.",
+  "delivery": "Original WAV masters, prepared WAVs and compressed browser MP3s are included in the sound pack.",
+  "assets": [
+    {
+      "id": "night-ambience",
+      "category": "World",
+      "duration_seconds": 12.0,
+      "loop": true,
+      "variants": 1,
+      "filename": "night-ambience_loop.wav",
+      "prompt": "Quiet night wind around a tiny abandoned roadside trailer camp, sparse insects, occasional faint rusty metal creaks and a faraway restrained electrical hum. Eerie, intimate and understated. Seamless outdoor ambience loop, no music, no voices, no zombies or gunfire.",
+      "trigger": "Nightfall through combat",
+      "events": [
+        "night-ambience"
+      ],
+      "playback_filename": "night-ambience_loop.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "door-open",
+      "category": "Trailer",
+      "duration_seconds": 2.0,
+      "loop": false,
+      "variants": 1,
+      "filename": "door-open_01.wav",
+      "prompt": "A light metal trailer door swings outward on dry hinges, a short uneven hinge squeak and gentle panel rattle, ending without a slam. One opening action. Realistic sound for a tiny cyber-apocalyptic diorama. No music, no cinematic stinger, no unrelated sounds. Dry close recording with minimal reverberation. No voices.",
+      "trigger": "Door begins opening before a passage",
+      "events": [
+        "door-open"
+      ],
+      "playback_filename": "door-open_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "door-close",
+      "category": "Trailer",
+      "duration_seconds": 1.5,
+      "loop": false,
+      "variants": 1,
+      "filename": "door-close_01.wav",
+      "prompt": "A metal trailer door closes with a restrained hollow clunk, its loose panel rattles briefly and the latch clicks into place. One closure, no excessive slam. Realistic sound for a tiny cyber-apocalyptic diorama. No music, no cinematic stinger, no unrelated sounds. Dry close recording with minimal reverberation. No voices.",
+      "trigger": "Door closes after the survivor clears it",
+      "events": [
+        "door-close"
+      ],
+      "playback_filename": "door-close_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "survivor-sigh",
+      "category": "Survivor",
+      "duration_seconds": 2.5,
+      "loop": false,
+      "variants": 1,
+      "filename": "survivor-sigh_01.wav",
+      "prompt": "A tired adult man takes a small breath then releases a long weary resigned sigh, as if facing the same unpleasant nightly chore again. Natural understated performance, wordless, no theatrical groan. Realistic sound for a tiny cyber-apocalyptic diorama. No music, no cinematic stinger, no unrelated sounds. Dry close recording with minimal reverberation.",
+      "trigger": "Weary gesture after exiting",
+      "events": [
+        "survivor-sigh"
+      ],
+      "playback_filename": "survivor-sigh_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "footstep-asphalt",
+      "category": "Movement",
+      "duration_seconds": 0.7,
+      "loop": false,
+      "variants": 1,
+      "filename": "footstep-asphalt_01.wav",
+      "prompt": "One heavy work boot takes a grounded step onto gritty cracked asphalt, a firm heel impact, slight sole compression and a small gravel crunch. One step only, no rhythm or walking sequence. Realistic sound for a tiny cyber-apocalyptic diorama. No music, no cinematic stinger, no unrelated sounds. Dry close recording with minimal reverberation. No voices.",
+      "trigger": "Each survivor foot plant outside",
+      "events": [
+        "footstep-asphalt"
+      ],
+      "playback_filename": "footstep-asphalt_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "pan-sizzle-loop",
+      "category": "Kitchen",
+      "duration_seconds": 8.0,
+      "loop": true,
+      "variants": 1,
+      "filename": "pan-sizzle-loop_loop.wav",
+      "prompt": "A small portion of food frying in a cast-iron skillet inside a trailer, fine irregular sizzling and tiny oily pops with occasional very light utensil contact. Warm close realistic kitchen foley, seamless loop, no music, no voices or exaggerated splashes.",
+      "trigger": "Food cooks in the pan",
+      "events": [
+        "pan-sizzle-loop"
+      ],
+      "playback_filename": "pan-sizzle-loop_loop.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "ground-crack",
+      "category": "Emergence",
+      "duration_seconds": 1.5,
+      "loop": false,
+      "variants": 1,
+      "filename": "ground-crack_01.wav",
+      "prompt": "A small patch of old asphalt splits under upward pressure, three sharp irregular brittle cracks mixed with coarse gravel grinding. Close, forceful and compact, no explosion. Realistic sound for a tiny cyber-apocalyptic diorama. No music, no cinematic stinger, no unrelated sounds. Dry close recording with minimal reverberation. No voices.",
+      "trigger": "Cracks become visible before a zombie",
+      "events": [
+        "ground-crack"
+      ],
+      "playback_filename": "ground-crack_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "zombie-emerge",
+      "category": "Emergence",
+      "duration_seconds": 3.0,
+      "loop": false,
+      "variants": 1,
+      "filename": "zombie-emerge_01.wav",
+      "prompt": "One decayed humanoid slowly climbs out through a person-sized patch of broken asphalt: gritty soil slides, small chunks knock, torn clothing strains, fingers scrape pavement and one low breathless effort groan. One compact three-second rise. Realistic horror-game foley, no music, no speech, no explosion.",
+      "trigger": "Zombie climbing out of the hole",
+      "events": [
+        "zombie-emerge"
+      ],
+      "playback_filename": "zombie-emerge_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "zombie-groan",
+      "category": "Zombies",
+      "duration_seconds": 2.5,
+      "loop": false,
+      "variants": 1,
+      "filename": "zombie-groan_01.wav",
+      "prompt": "One low damaged human-like zombie groan, coarse breath, dry throat texture and an uneven exhale. Wordless, slow and threatening, no intelligible speech, no monster roar or layered crowd. Realistic sound for a tiny cyber-apocalyptic diorama. No music, no cinematic stinger, no unrelated sounds. Dry close recording with minimal reverberation.",
+      "trigger": "Sparse idle zombie vocalizations",
+      "events": [
+        "zombie-groan"
+      ],
+      "playback_filename": "zombie-groan_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "zombie-attack",
+      "category": "Zombies",
+      "duration_seconds": 1.2,
+      "loop": false,
+      "variants": 1,
+      "filename": "zombie-attack_01.wav",
+      "prompt": "One close zombie winds up to strike: a short coarse damaged-human rasp and tense aggressive exhale, followed by a quick torn-sleeve swipe through the air. One compact attack, grounded and wordless, no giant monster roar, no impact, no music.",
+      "trigger": "Attack wind-up",
+      "events": [
+        "zombie-attack"
+      ],
+      "playback_filename": "zombie-attack_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "shotgun-fire",
+      "category": "Shotgun",
+      "duration_seconds": 2.0,
+      "loop": false,
+      "variants": 1,
+      "filename": "shotgun-fire_01.wav",
+      "prompt": "One single 12-gauge pump-shotgun blast in a small open-air roadside camp, a tight sharp crack, weighty short low punch and brief natural outdoor decay. No cycling, no shell drop, no second shot, no automatic fire. Realistic sound for a tiny cyber-apocalyptic diorama. No music, no cinematic stinger, no unrelated sounds. Dry close recording with minimal reverberation. No voices.",
+      "trigger": "Each accepted player shot",
+      "events": [
+        "shotgun-fire"
+      ],
+      "playback_filename": "shotgun-fire_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "shotgun-pump-cycle",
+      "category": "Shotgun",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "variants": 1,
+      "filename": "shotgun-pump-cycle_01.wav",
+      "prompt": "One complete pump-shotgun cycle: the wooden fore-end racks firmly backward with crisp sliding metal, then pushes forward into a positive locking clack; one tiny spent-shell tick follows. One short natural sequence, close and dry, no gunshot, no repeated pumping, no voices or music.",
+      "trigger": "After each shotgun blast; the clip contains both pump strokes and the shell detail",
+      "events": [
+        "shotgun-pump-back"
+      ],
+      "playback_filename": "shotgun-pump-cycle_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "flesh-impact",
+      "category": "Blood",
+      "duration_seconds": 0.9,
+      "loop": false,
+      "variants": 1,
+      "filename": "flesh-impact_01.wav",
+      "prompt": "One close heavy pellet hit into a decayed fictional zombie: a compact wet body thud, short fibrous tear, small brittle crunch and brief blood splatter onto rough asphalt. A single punchy impact for body hits and severed parts, no gunshot, no vocalization, no music.",
+      "trigger": "Pellets hit a zombie",
+      "events": [
+        "flesh-impact"
+      ],
+      "playback_filename": "flesh-impact_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "zombie-body-fall",
+      "category": "Blood",
+      "duration_seconds": 1.8,
+      "loop": false,
+      "variants": 1,
+      "filename": "zombie-body-fall_01.wav",
+      "prompt": "A heavy limp body in torn clothing collapses onto dry asphalt, a knee scrape, dull torso thud and brief loose cloth rattle. One fall, no voice or weapon sound. Realistic sound for a tiny cyber-apocalyptic diorama. No music, no cinematic stinger, no unrelated sounds. Dry close recording with minimal reverberation. No voices.",
+      "trigger": "Zombie bodies or severed parts landing; reuse the same file at different volume and pitch",
+      "events": [
+        "zombie-body-fall"
+      ],
+      "playback_filename": "zombie-body-fall_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "sunrise-burn",
+      "category": "Daylight",
+      "duration_seconds": 5,
+      "loop": false,
+      "variants": 1,
+      "filename": "sunrise-burn_01.wav",
+      "prompt": "A small group of decayed zombie remains suddenly catches fire in sunlight: several compact soft ignition whoofs, dry fabric crackles and a restrained oily sizzle that gradually fades to ash over five seconds. One localized burn sequence, no explosion, no voices or music.",
+      "trigger": "Surviving zombies begin burning",
+      "events": [
+        "sunrise-burn"
+      ],
+      "playback_filename": "sunrise-burn_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "harvester-motor-loop",
+      "category": "Harvester",
+      "duration_seconds": 8.0,
+      "loop": true,
+      "variants": 1,
+      "filename": "harvester-motor-loop_loop.wav",
+      "prompt": "A compact patched-together electric corpse-harvester cart runs steadily: low motor whirr, soft under-deck suction, faint conveyor chatter and small caster vibrations. Believable modest machinery, stable seamless loop, no combustion engine, no crushing material, no voices or music.",
+      "trigger": "Cart remains powered",
+      "events": [
+        "harvester-motor-loop"
+      ],
+      "playback_filename": "harvester-motor-loop_loop.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "harvester-crusher-loop",
+      "category": "Harvester",
+      "duration_seconds": 6.0,
+      "loop": true,
+      "variants": 1,
+      "filename": "harvester-crusher-loop_loop.wav",
+      "prompt": "A compact moving harvester draws soft wet organic material beneath its ground-level hood and grinds it: short gritty scraping, muffled wet compression, fibrous crunching and small minced pieces plopping into a plastic bin. Seamless loaded-machine loop, no screams, no engine bed or music.",
+      "trigger": "Material passes through the crusher",
+      "events": [
+        "harvester-crusher-loop"
+      ],
+      "playback_filename": "harvester-crusher-loop_loop.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "tar-shovel",
+      "category": "Repairs",
+      "duration_seconds": 2,
+      "loop": false,
+      "variants": 1,
+      "filename": "tar-shovel_01.wav",
+      "prompt": "One short repair stroke with a steel shovel and thick sticky tar: a gritty metal scoop, dense adhesive pull, a soft heavy deposit into a pavement crack and a brief rough smoothing scrape. Close realistic foley, no watery splash, no voice or music.",
+      "trigger": "Each shovel scoop",
+      "events": [
+        "tar-shovel"
+      ],
+      "playback_filename": "tar-shovel_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "survivor-hurt",
+      "category": "Survivor",
+      "duration_seconds": 1.0,
+      "loop": false,
+      "variants": 1,
+      "filename": "survivor-hurt_01.wav",
+      "prompt": "One heavy close blow lands on a canvas jacket with a compact dull body slap and brief fabric scrape, immediately followed by a short involuntary pained grunt from an adult man. One grounded restrained hit reaction, wordless, no screaming or music.",
+      "trigger": "A zombie damages the player",
+      "events": [
+        "survivor-hurt"
+      ],
+      "playback_filename": "survivor-hurt_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    },
+    {
+      "id": "survivor-death",
+      "category": "Survivor",
+      "duration_seconds": 2.5,
+      "loop": false,
+      "variants": 1,
+      "filename": "survivor-death_01.wav",
+      "prompt": "A tired adult male survivor collapses: one final strained breath and low wordless groan, a dropped wooden gun makes a small metal-and-wood clack, then his work-clothed body lands on gritty asphalt with a weighty thud and short scrape. One natural two-and-a-half-second death sequence, no music, no dialogue, no dramatic scream.",
+      "trigger": "Fatal zombie hit",
+      "events": [
+        "survivor-death"
+      ],
+      "playback_filename": "survivor-death_01.mp3",
+      "generated_with": "ElevenLabs Sound Effects v3",
+      "selected_take": 1
+    }
+  ],
+  "integration_notes": [
+    "Trigger the complete pump-cycle file from shotgun-pump-back only; do not layer additional pump-forward or shell files.",
+    "Use flesh-impact once for each successful shot; head-impact, limb-sever and blood-spray need no additional generated files.",
+    "The death clip includes the gun drop and body fall, so those subevents need no extra files.",
+    "Reuse the footsteps and body-landing sounds rather than generating separate minor variants."
+  ]
+}

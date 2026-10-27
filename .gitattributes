@@ -1,0 +1,3 @@
+# Keep the pinned bundle byte-for-byte; shader template strings contain whitespace.
+public/night-shift/*.js -whitespace
+public/night-shift/** linguist-vendored=true
